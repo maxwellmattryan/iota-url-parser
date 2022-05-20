@@ -1,3 +1,9 @@
+## Output files
+dist/
+
+## NodeJS
+**/node_modules/
+
 ## IDEs
 .idea/
 .vs/
