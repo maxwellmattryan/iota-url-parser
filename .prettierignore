@@ -4,5 +4,6 @@
 # Output files
 dist/
 
-# GitHub things
+# Other things
 .github/
+.husky/

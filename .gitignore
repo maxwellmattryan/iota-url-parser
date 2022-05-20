@@ -4,6 +4,9 @@ dist/
 ## NodeJS
 **/node_modules/
 
+## ESLint stuff
+.eslintcache
+
 ## IDEs
 .idea/
 .vs/
