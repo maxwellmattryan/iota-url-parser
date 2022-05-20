@@ -18,8 +18,9 @@
         "deep link"
     ],
     "scripts": {
-        "build": "rollup -c",
-        "start": "rollup -c -w",
+        "build": "yarn clean && rollup -c",
+        "clean": "rimraf dist",
+        "start": "yarn clean && rollup -c -w",
         "test": "jest",
         "format": "prettier -w \"**/*.{ts,js,json}\"",
         "format-check": "prettier -c \"**/*.{ts,js,json}\"",
@@ -43,6 +44,7 @@
         "jest": "^28.1.0",
         "lint-staged": "^12.4.1",
         "prettier": "^2.6.2",
+        "rimraf": "^3.0.2",
         "rollup": "^2.74.1",
         "rollup-plugin-typescript2": "^0.31.2",
         "ts-jest": "^28.0.2",
