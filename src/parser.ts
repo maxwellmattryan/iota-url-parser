@@ -9,7 +9,6 @@ function parser(deepLinkString: string): unknown {
 
     const queryParameters = deepLinkString.split('?')
     const queryParametersString = queryParameters.length > 0 ? queryParameters[1] : ''
-
     const queryParameterObject = qs.parse(queryParametersString)
     console.log('QUERY PARAMS PARSE RESULT: ', queryParameterObject)
 
