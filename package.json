@@ -1,42 +1,56 @@
 {
-  "name": "iota-url-parser",
-  "version": "0.0.1",
-  "description": "A lightweight module that supports parsing and building of IOTA deep links",
-  "author": "Matthew Maxwell",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:maxwellmattryan/iota-url-parser.git"
-  },
-  "bugs": {
-    "url": "https://github.com/maxwellmattryan/iota-url-parser/issues"
-  },
-  "keywords": [
-    "iota",
-    "url",
-    "parser",
-    "deep link"
-  ],
-  "scripts": {
-    "build": "rollup -c",
-    "start": "rollup -c -w",
-    "test": "jest"
-  },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "package.json"
-  ],
-  "devDependencies": {
-    "@types/jest": "^27.5.1",
-    "jest": "^28.1.0",
-    "rollup": "^2.74.1",
-    "rollup-plugin-typescript2": "^0.31.2",
-    "ts-jest": "^28.0.2",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.6.4"
-  },
-  "dependencies": {}
+    "name": "iota-url-parser",
+    "version": "0.0.1",
+    "description": "A lightweight module that supports parsing and building of IOTA deep links",
+    "author": "Matthew Maxwell",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:maxwellmattryan/iota-url-parser.git"
+    },
+    "bugs": {
+        "url": "https://github.com/maxwellmattryan/iota-url-parser/issues"
+    },
+    "keywords": [
+        "iota",
+        "url",
+        "parser",
+        "deep link"
+    ],
+    "scripts": {
+        "build": "rollup -c",
+        "start": "rollup -c -w",
+        "test": "jest",
+        "format": "prettier -w \"**/*.{ts,js,json}\"",
+        "format-check": "prettier -c \"**/*.{ts,js,json}\"",
+        "lint": "eslint . --cache --fix",
+        "lint-check": "eslint . --cache"
+    },
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "package.json"
+    ],
+    "devDependencies": {
+        "@types/jest": "^27.5.1",
+        "@typescript-eslint/eslint-plugin": "^5.25.0",
+        "@typescript-eslint/parser": "^5.25.0",
+        "eslint": "^8.15.0",
+        "eslint-plugin-security": "^1.5.0",
+        "jest": "^28.1.0",
+        "lint-staged": "^12.4.1",
+        "prettier": "^2.6.2",
+        "rollup": "^2.74.1",
+        "rollup-plugin-typescript2": "^0.31.2",
+        "ts-jest": "^28.0.2",
+        "ts-node": "^10.7.0",
+        "typescript": "^4.6.4"
+    },
+    "dependencies": {},
+    "lint-staged": {
+        "*.{ts,js,json}": "prettier --write",
+        "*.{ts,js}": "eslint --cache --fix"
+    }
 }

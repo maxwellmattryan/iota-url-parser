@@ -1,0 +1,8 @@
+# Node packages
+**/node_modules/
+
+# Output files
+dist/
+
+# GitHub things
+.github/
