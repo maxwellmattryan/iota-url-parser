@@ -1,0 +1,70 @@
+---
+name: ':lady_beetle: Bug Report'
+description: Fill in a bug report to help improve the library
+title: '[BUG]: '
+labels: 'bug-report'
+
+body:
+  - type: markdown
+    attributes:
+      value: '## Reporting a Bug'
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping to improve the library! Please search the other [bug reports](https://github.com/maxwellmattryan/iota-url-parser/issues?q=is%3Aissue+is%3Aopen+label%3Abug-report) before creating one to ensure you won't be creating a duplicate. 
+        
+        :warning: This form is for bugs only and not for help or support using this application.
+
+  - type: markdown
+    attributes:
+      value: '## Bug Details'
+
+  - type: textarea
+    id: actual_behaviour
+    attributes:
+      label: Actual Behaviour
+      description: A concise description of what actually happened.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behaviour
+    attributes:
+      label: Expected Behaviour
+      description: A concise description of what you expected to happen.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: can_repro
+    attributes:
+      label: Can the bug be reliably reproduced?
+      options:
+        - 'Yes'
+        - 'No'
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro_steps
+    attributes:
+      label: Reproduction Steps
+      description: Explain how the maintainer can reproduce the issue.
+      placeholder: |
+        1.
+        2.
+        3.
+        ...
+
+  - type: markdown
+    attributes:
+      value: '## Submission Checklist'
+
+  - type: checkboxes
+    id: duplicate_declaration
+    attributes:
+      label: Duplicate declaration
+      description: Please confirm that you are not creating a duplicate issue.
+      options:
+        - label: I have searched the issues tracker this issue and there is none
+          required: true
