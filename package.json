@@ -25,7 +25,8 @@
         "format": "prettier -w \"**/*.{ts,js,json}\"",
         "format-check": "prettier -c \"**/*.{ts,js,json}\"",
         "lint": "eslint . --cache --fix",
-        "lint-check": "eslint . --cache"
+        "lint-check": "eslint . --cache",
+        "parser": "ts-node -s src/parser.ts"
     },
     "main": "dist/index.js",
     "module": "dist/index.mjs",

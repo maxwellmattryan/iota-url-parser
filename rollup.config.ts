@@ -6,5 +6,5 @@ export default {
         { file: 'dist/index.mjs', format: 'esm' },
         { file: 'dist/index.js', format: 'cjs' },
     ],
-    plugins: [typescript()],
+    plugins: [typescript({ tsconfig: './tsconfig.build.json' })],
 }
