@@ -1,7 +1,1 @@
-export function parseIotaDeepLink(): object {
-    return {}
-}
-
-export function buildIotaDeepLink(): string {
-    return ''
-}
+export * from './parse'

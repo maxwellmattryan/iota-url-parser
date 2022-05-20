@@ -1,38 +1,42 @@
 {
-    "name": "iota-url-parser",
-    "version": "0.0.1",
-    "description": "A lightweight module that supports parsing and building of IOTA deep links",
-    "author": "Matthew Maxwell",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:maxwellmattryan/iota-url-parser.git"
-    },
-    "bugs": {
-        "url": "https://github.com/maxwellmattryan/iota-url-parser/issues"
-    },
-    "keywords": [
-        "iota",
-        "url",
-        "parser",
-        "deep link"
-    ],
-    "scripts": {
-        "build": "rollup -c",
-        "start": "rollup -c -w",
-        "test": "echo TODO"
-    },
-    "main": "dist/index.js",
-    "module": "dist/index.mjs",
-    "types": "dist/index.d.ts",
-    "files": [
-        "dist",
-        "package.json"
-    ],
-    "devDependencies": {
-        "rollup": "^2.74.1",
-        "rollup-plugin-typescript2": "^0.31.2",
-        "typescript": "^4.6.4"
-    },
-    "dependencies": {}
+  "name": "iota-url-parser",
+  "version": "0.0.1",
+  "description": "A lightweight module that supports parsing and building of IOTA deep links",
+  "author": "Matthew Maxwell",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:maxwellmattryan/iota-url-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maxwellmattryan/iota-url-parser/issues"
+  },
+  "keywords": [
+    "iota",
+    "url",
+    "parser",
+    "deep link"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "test": "jest"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "devDependencies": {
+    "@types/jest": "^27.5.1",
+    "jest": "^28.1.0",
+    "rollup": "^2.74.1",
+    "rollup-plugin-typescript2": "^0.31.2",
+    "ts-jest": "^28.0.2",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {}
 }
