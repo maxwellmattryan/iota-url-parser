@@ -25,6 +25,10 @@
     "main": "dist/index.js",
     "module": "dist/index.mjs",
     "types": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "package.json"
+    ],
     "devDependencies": {
         "rollup": "^2.74.1",
         "rollup-plugin-typescript2": "^0.31.2",
