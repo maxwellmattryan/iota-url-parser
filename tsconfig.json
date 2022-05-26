@@ -1,10 +1,11 @@
 {
     "compilerOptions": {
+        "baseUrl": ".",
         "rootDir": "src",
         "outDir": "dist",
         "target": "es5",
         "module": "commonjs",
-        "lib": ["es6", "dom"],
+        "lib": ["es2017", "dom"],
         "moduleResolution": "node",
         "sourceMap": true,
         "strict": true,
@@ -19,7 +20,10 @@
         "skipLibCheck": true,
         "declaration": true,
         "esModuleInterop": true,
-        "types": ["jest"]
+        "types": ["jest"],
+        "paths": {
+            "@src/*": ["./src/*"]
+        }
     },
     "include": ["src"],
     "exclude": ["node_modules", "dist", "**/*.test.ts"]
