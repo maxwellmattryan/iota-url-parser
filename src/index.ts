@@ -1,2 +1,2 @@
-export * as build from './build'
-export * as parse from './parse'
+export { build } from './build'
+export { parse } from './parse'

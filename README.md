@@ -20,24 +20,6 @@ yarn install iota-url-parser
 
 The library contains two functions:
 
-### `build(protocol, context, operation, argument, parameters)`
-
-Assemble an IOTA deep link URL given a few parameters.
-
-```typescript
-import { build } from 'iota-url-parser'
-
-const buildResult = build(
-    'iota',
-    'wallet', 
-    'send', 
-    'atoi1qzallu8y7jhglsc6n93qx8u3lfv3nwagju7xh7al2y7rwwt7f4vsuda9rg5', 
-    { amount: 51, unit: 'Gi' }
-)
-console.log(buildResult)
-// iota://wallet/send/atoi1qzallu8y7jhglsc6n93qx8u3lfv3nwagju7xh7al2y7rwwt7f4vsuda9rg5?amount=51&unit=Gi
-```
-
 ### `parse(uri)`
 
 Parses an IOTA deep link for its various properties, namely
@@ -55,4 +37,22 @@ console.log(parseResult)
 //     argument: 'atoi1qzallu8y7jhglsc6n93qx8u3lfv3nwagju7xh7al2y7rwwt7f4vsuda9rg5',
 //     parameters: { amount: 51, unit: 'Gi' }
 // }
+```
+
+### `build(protocol, context, operation, argument, parameters)`
+
+Assemble an IOTA deep link URL given a few parameters.
+
+```typescript
+import { build } from 'iota-url-parser'
+
+const buildResult = build(
+    'iota',
+    'wallet', 
+    'send', 
+    'atoi1qzallu8y7jhglsc6n93qx8u3lfv3nwagju7xh7al2y7rwwt7f4vsuda9rg5', 
+    { amount: 51, unit: 'Gi' }
+)
+console.log(buildResult)
+// iota://wallet/send/atoi1qzallu8y7jhglsc6n93qx8u3lfv3nwagju7xh7al2y7rwwt7f4vsuda9rg5?amount=51&unit=Gi
 ```

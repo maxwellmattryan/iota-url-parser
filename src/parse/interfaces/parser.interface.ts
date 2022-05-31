@@ -1,4 +1,4 @@
-import { DeepLinkUri, IDeepLink } from '@src/deep-link'
+import { DeepLinkUri, IDeepLink } from '../../deep-link'
 
 export interface IParser {
     parse(uri: DeepLinkUri): IDeepLink

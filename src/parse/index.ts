@@ -8,71 +8,50 @@ import {
     DeepLinkProtocol,
     DeepLinkUri,
     IDeepLink,
+    InvalidDeepLinkFormatError,
     ISendOperationParameters,
     SendOperationParameter,
     WalletOperation,
     WalletOperationParameters,
 } from '@src/deep-link'
-import { IotaUnit } from '@src/utils'
+import { InvalidUnitError, IotaUnit } from '@src/utils'
 
-import { IParser } from './parser.interface'
+export function parse(uri: DeepLinkUri): IDeepLink {
+    try {
+        console.log('DEEP LINK URI: ', uri)
 
-export class InvalidDeepLinkFormatError extends Error {
-    constructor(explanation: string) {
-        super(`Invalid deep link format: ${explanation}`)
-    }
-}
-
-export class InvalidDeepLinkProtocolError extends Error {
-    constructor() {
-        super('Invalid deep link protocol')
-    }
-}
-
-export class InvalidUnitError extends Error {
-    constructor() {
-        super(`Invalid unit error`)
-    }
-}
-
-export class Parser implements IParser {
-    parse(uri: DeepLinkUri): IDeepLink {
-        try {
-            console.log('DEEP LINK URI: ', uri)
-
-            const regexp = /(^iota|smr):\/\/([a-z]*)\/([a-z]*)\/([a-z0-9]*)/g
-            const regexpResult = regexp.exec(uri) ?? []
-            if (!regexpResult || regexpResult.length < 5) {
-                throw new InvalidDeepLinkFormatError('URI is not fully formed')
-            }
-
-            const protocolRaw = regexpResult[1]
-            const protocol = validateProtocol(protocolRaw)
-
-            const contextRaw = regexpResult[2]
-            const context = validateContext(contextRaw)
-
-            const operationRaw = regexpResult[3]
-            const operation = validateOperation(context, operationRaw)
-
-            const argumentRaw = regexpResult[4]
-            const argument = validateArgument(context, operation, argumentRaw)
-
-            const parametersRaw = uri.replace(`${protocolRaw}://${contextRaw}/${operationRaw}/${argumentRaw}?`, '')
-            const parametersCasted = new Object(qs.parse(parametersRaw))
-            const parameters = validateParameters(context, operation, parametersCasted)
-
-            return <IDeepLink>{
-                protocol,
-                context,
-                operation,
-                argument,
-                parameters: { ...parameters },
-            }
-        } catch (err) {
-            console.error(err)
-            throw err
+        const regexp = /(^iota|smr):\/\/([a-z]*)\/([a-z]*)\/([a-z0-9]*)/g
+        const regexpResult = regexp.exec(uri) ?? []
+        if (!regexpResult || regexpResult.length < 5) {
+            throw new InvalidDeepLinkFormatError('URI is not fully formed')
         }
+
+        const protocolRaw = regexpResult[1]
+        const protocol = validateProtocol(protocolRaw)
+
+        const contextRaw = regexpResult[2]
+        const context = validateContext(contextRaw)
+
+        const operationRaw = regexpResult[3]
+        const operation = validateOperation(context, operationRaw)
+
+        const argumentRaw = regexpResult[4]
+        const argument = validateArgument(context, operation, argumentRaw)
+
+        const parametersRaw = uri.replace(`${protocolRaw}://${contextRaw}/${operationRaw}/${argumentRaw}?`, '')
+        const parametersCasted = new Object(qs.parse(parametersRaw))
+        const parameters = validateParameters(context, operation, parametersCasted)
+
+        return <IDeepLink>{
+            protocol,
+            context,
+            operation,
+            argument,
+            parameters: { ...parameters },
+        }
+    } catch (err) {
+        console.error(err)
+        throw err
     }
 }
 
