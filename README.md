@@ -1,6 +1,6 @@
 # `iota-url-parser`
 
-[![iota-url-parser](https://img.shields.io/badge/iota--url--parser-v0.0.1-informational)](https://github.com/maxwellmattryan/iota-url-parser)
+[![iota-url-parser](https://img.shields.io/badge/iota--url--parser-v0.0.2-informational)](https://github.com/maxwellmattryan/iota-url-parser)
 [![downloads](https://img.shields.io/npm/dm/iota-url-parser)](https://npmjs.com/package/iota-url-parser)
 [![CI](https://github.com/maxwellmattryan/iota-url-parser/actions/workflows/ci.yml/badge.svg)](https://github.com/maxwellmattryan/iota-url-parser/actions/workflows/ci.yml)
 
