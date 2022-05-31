@@ -1,6 +1,6 @@
 {
     "name": "iota-url-parser",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A lightweight module that supports parsing and building of IOTA deep links",
     "author": "Matthew Maxwell",
     "license": "MIT",
