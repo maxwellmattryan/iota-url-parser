@@ -1,7 +1,7 @@
 ---
 name: '🐞 Bug Report'
 description: Fill in a bug report to help improve the library
-title: '[BUG]: '
+title: '🐞 '
 labels: 'bug-report'
 
 body:
