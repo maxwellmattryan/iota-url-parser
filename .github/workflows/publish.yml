@@ -2,8 +2,9 @@ name: Publish
 
 on:
   push:
-    - 'main'
-    - 'feat/**'
+    branches:
+      - 'main'
+      - 'feat/**'
 
 jobs:
   build:
