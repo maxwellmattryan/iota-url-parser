@@ -19,5 +19,5 @@ export function build(
 ): DeepLinkUri {
     const parametersString = qs.stringify(parameters)
 
-    return `${protocol}://${context}/${operation}/${argument}?${parametersString}`
+    return `${protocol}://${context}/${operation}/${argument}${parametersString ? '?' + parametersString : ''}`
 }

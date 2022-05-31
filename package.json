@@ -8,6 +8,9 @@
         "type": "git",
         "url": "git@github.com:maxwellmattryan/iota-url-parser.git"
     },
+    "publishConfig": {
+        "access": "public"
+    },
     "bugs": {
         "url": "https://github.com/maxwellmattryan/iota-url-parser/issues"
     },
