@@ -1,5 +1,7 @@
 import * as qs from 'qs'
 
+import { AddressParser } from 'iota-address-parser'
+
 import {
     DeepLinkArgument,
     DeepLinkContext,
@@ -15,6 +17,8 @@ import {
     WalletOperationParameters,
 } from '@src/deep-link'
 import { InvalidUnitError, IotaUnit } from '@src/utils'
+
+const ADDRESS_PARSER = new AddressParser()
 
 export function parse(uri: DeepLinkUri): IDeepLink {
     try {
@@ -114,6 +118,7 @@ function validateWalletOperationArgument(operation: WalletOperation, rawArgument
 }
 
 function validateBech32Address(address: string): string {
+    ADDRESS_PARSER.parseAddress(address)
     return address
 }
 

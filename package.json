@@ -1,6 +1,6 @@
 {
     "name": "iota-url-parser",
-    "version": "0.0.2",
+    "version": "0.2.0",
     "description": "A lightweight module that supports parsing and building of IOTA deep links",
     "author": "Matthew Maxwell",
     "license": "MIT",
@@ -16,19 +16,26 @@
     },
     "keywords": [
         "iota",
+        "shimmer",
         "url",
         "parser",
-        "deep link"
+        "builder",
+        "deep link",
+        "crypto"
     ],
     "scripts": {
         "build": "yarn clean && rollup -c",
         "clean": "rimraf dist",
+        "format": "yarn format:fix",
+        "format:check": "prettier --check **/*.{ts,js,json}",
+        "format:fix": "prettier --write **/*.{ts,js,json}",
+        "lint": "yarn lint:fix",
+        "lint:check": "eslint --cache --debug **/*.{ts,js}",
+        "lint:fix": "eslint --cache --fix **/*.{ts,js}",
+        "prepare": "husky install",
+        "sandbox": "ts-node src/sandbox.ts",
         "start": "yarn clean && rollup -c -w",
-        "test": "jest",
-        "format": "prettier -w \"**/*.{ts,js,json}\"",
-        "format-check": "prettier -c \"**/*.{ts,js,json}\"",
-        "lint": "eslint . --cache --fix",
-        "lint-check": "eslint . --cache"
+        "test": "jest"
     },
     "main": "dist/index.js",
     "module": "dist/index.mjs",
@@ -39,6 +46,7 @@
     ],
     "devDependencies": {
         "@types/jest": "^27.5.1",
+        "@types/qs": "^6.9.7",
         "@typescript-eslint/eslint-plugin": "^5.25.0",
         "@typescript-eslint/parser": "^5.25.0",
         "eslint": "^8.15.0",
@@ -56,7 +64,7 @@
         "typescript": "^4.6.4"
     },
     "dependencies": {
-        "@types/qs": "^6.9.7",
+        "iota-address-parser": "^0.1.2",
         "qs": "^6.10.3"
     },
     "lint-staged": {

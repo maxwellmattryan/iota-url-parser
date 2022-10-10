@@ -1,6 +1,26 @@
 {
-    "extends": "./tsconfig.json",
     "compilerOptions": {
-        "module": "esnext"
-    }
+        "baseUrl": ".",
+        "rootDir": "src",
+        "outDir": "dist",
+        "target": "es5",
+        "module": "esnext",
+        "lib": ["es2017", "dom"],
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "strict": true,
+        "strictFunctionTypes": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "alwaysStrict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "skipLibCheck": true,
+        "declaration": true,
+        "declarationDir": "dist/dts",
+        "esModuleInterop": true
+    },
+    "exclude": ["node_modules", "dist", "**/tests", "src/sandbox.ts"]
 }
